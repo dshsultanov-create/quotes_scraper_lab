@@ -1,13 +1,20 @@
 import sqlite3
 from datetime import datetime
+from pathlib import Path
 
 from scraper.config import DB_PATH
 
 
 def get_connection():
+    Path(DB_PATH).parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     conn.execute("PRAGMA foreign_keys = ON")
+
     return conn
 
 
@@ -172,6 +179,7 @@ def get_authors_without_details() -> list[dict]:
     )
 
     rows = cursor.fetchall()
+
     conn.close()
 
     return [dict(row) for row in rows]
@@ -196,6 +204,7 @@ def get_all_authors() -> list[dict]:
     )
 
     rows = cursor.fetchall()
+
     conn.close()
 
     return [dict(row) for row in rows]
@@ -235,6 +244,7 @@ def get_all_quotes() -> list[dict]:
     )
 
     rows = cursor.fetchall()
+
     conn.close()
 
     return [dict(row) for row in rows]
