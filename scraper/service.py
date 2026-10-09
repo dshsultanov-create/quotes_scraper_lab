@@ -1,14 +1,14 @@
 from scraper.config import BASE_URL
 from scraper.fetch import fetch_page
 from scraper.parse import (
-    parse_quotes_from_page,
-    parse_next_page_url,
     parse_author_page,
+    parse_next_page_url,
+    parse_quotes_from_page,
 )
 from scraper.repository import (
-    save_quotes,
     get_authors_without_details,
     save_author_details,
+    save_quotes,
 )
 
 

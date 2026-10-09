@@ -4,10 +4,9 @@ import requests
 from dotenv import load_dotenv
 
 from scraper.repository import (
-    get_all_quotes,
     get_all_authors,
+    get_all_quotes,
 )
-
 
 load_dotenv()
 

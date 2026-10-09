@@ -1,7 +1,9 @@
-from bs4 import BeautifulSoup
 from urllib.parse import urljoin
 
+from bs4 import BeautifulSoup
+
 from scraper.config import BASE_URL
+
 
 def parse_quotes_from_page(html: str, page_number: int = 1) -> list[dict]:
     soup = BeautifulSoup(html, "html.parser")

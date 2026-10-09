@@ -1,6 +1,6 @@
 from scraper.service import (
-    scrape_all_pages_and_save,
     enrich_authors,
+    scrape_all_pages_and_save,
 )
 from scraper.sheets_sync import export_all_to_google_sheets
 

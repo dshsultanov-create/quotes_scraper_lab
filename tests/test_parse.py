@@ -1,8 +1,9 @@
 from scraper.parse import (
-    parse_quotes_from_page,
-    parse_next_page_url,
     parse_author_page,
+    parse_next_page_url,
+    parse_quotes_from_page,
 )
+
 
 def test_parse_author_page():
     html = """

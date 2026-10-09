@@ -1,26 +1,19 @@
 import streamlit as st
 
 from scraper.repository import (
-    init_db,
-    get_all_quotes,
-    get_quotes_count,
     get_all_authors,
+    get_all_quotes,
     get_authors_count,
+    get_quotes_count,
+    init_db,
 )
-
-st.divider()
-st.subheader("Manual tools")
-
 from scraper.service import (
-    scrape_first_page_and_save,
-    scrape_all_pages_and_save,
     enrich_authors,
+    scrape_all_pages_and_save,
+    scrape_first_page_and_save,
 )
-
 from scraper.sheets_sync import export_all_to_google_sheets
-
 from scraper.workflow import run_full_workflow
-
 
 st.set_page_config(
     page_title="Quotes Scraper Lab",
