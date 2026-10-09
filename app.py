@@ -1,3 +1,5 @@
+import os
+
 import streamlit as st
 
 from scraper.repository import (
@@ -26,6 +28,14 @@ st.write("Учебное приложение для парсинга Quotes to 
 init_db()
 
 st.subheader("Full workflow")
+
+google_sheet_url = os.getenv("SHEETS_DOCUMENT_URL")
+
+if google_sheet_url:
+    st.link_button(
+        "Open Google Sheet",
+        google_sheet_url,
+    )
 
 st.write(
     "Запустить полный процесс: "
